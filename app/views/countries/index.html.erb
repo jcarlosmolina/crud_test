@@ -1,0 +1,41 @@
+<h1>Countries</h1>
+
+<div class="row-fluid">
+  <div class="span4 offset4">
+    <table class="table table-stripped table-bordered table-condensed">
+      <tr>
+        <th>ISO</th>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <% @countries.each do |country| %>
+      <tr>
+        <td><%= country.iso_code %></td>
+        <td><%= country.name %></td>
+        <td>
+          <%= link_to country do %>
+          <i class="icon-list"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to edit_country_path(country) do %>
+          <i class="icon-edit"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to country, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="icon-remove"></i>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <br />
+    <i class="icon-plus"></i>
+    <%= link_to 'New Country', new_country_path %>
+  </div><!--span4-->
+</div><!--row-fluid-->

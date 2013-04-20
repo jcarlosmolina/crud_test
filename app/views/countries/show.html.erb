@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row-fluid">
+	<div class="span4 offset4">
+		<p>
+  			<b>ISO Code:</b>
+  			<%= @country.iso_code %>
+		</p>
+
+		<p>
+  			<b>Name:</b>
+  			<%= @country.name %>
+		</p>
+
+		<i class="icon-edit"></i>
+		<%= link_to 'Edit', edit_country_path(@country) %> |
+		<i class="icon-circle-arrow-left"></i>
+		<%= link_to 'Back', countries_path %>
+	</div>
+</div>
