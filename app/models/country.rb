@@ -12,5 +12,8 @@
 class Country < ActiveRecord::Base
   attr_accessible :iso_code, :name
 
-  validates :name, presence: true
+  validates :iso_code, presence: true, length: { maximum: 3 }, uniqueness: { case_sensitive: false }
+  validates :name, presence: true, length: { maximum: 50 }
+
+  before_save { |country| country.iso_code = iso_code.upcase }
 end
