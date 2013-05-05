@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %>
+<div class="row-fluid">
+	<div class="span4 offset4">
+		<p>
+			<b>Country:</b>
+			<%= @state.country.name %>
+		</p>
+
+		<p>
+			<b>Code:</b>
+			<%= @state.state_code %>
+		</p>
+
+		<p>
+			<b>Name:</b>
+			<%= @state.name %>
+		</p>
+
+		<i class="icon-edit"></i>
+		<%= link_to 'Edit', edit_state_path(@state) %>
+		<i class="icon-circle-arrow-left"></i>
+		<%= link_to 'Back', states_path %>
+	</div>
+</div>

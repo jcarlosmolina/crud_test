@@ -1,5 +1,6 @@
 CrudTest::Application.routes.draw do
   resources :countries
+  resources :states
 
   root  to: 'countries#index'
 

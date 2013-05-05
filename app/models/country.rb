@@ -12,6 +12,8 @@
 class Country < ActiveRecord::Base
   attr_accessible :iso_code, :name
 
+  has_many :states
+
   validates :iso_code, presence: true, length: { maximum: 3 }, uniqueness: { case_sensitive: false }
   validates :name, presence: true, length: { maximum: 50 }
 
